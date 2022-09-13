@@ -11,9 +11,7 @@ func _on_Button_pressed() -> void:
 ```
 
 
-
-![Godot Motion](D:\Desktop\godot-motion.gif)
-
+![Godot Motion](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/docs/godot-motion.gif)
 
 
 #### Tween と比較して...
@@ -27,10 +25,7 @@ func _on_Button_pressed() -> void:
 * 同じくらいには簡単に使える
   * (詰めれば) 一行で開始しそのまま丸投げできる
   * 複雑なこともできる
-
 * たぶん軽い
-
-
 
 ## 準備
 
@@ -41,28 +36,18 @@ func _on_Button_pressed() -> void:
 2. `Motion` アドオンを有効化します。
 3. 書く。
 
-
-
 #### 消すには...
 
 `Motion` アドオンを無効化し、`godot-motion` ディレクトリをあなたのプロジェクトから削除します。
-
-
 
 ## 使いかた
 
 アドオンを有効化すると、`Motion` というシングルトンが追加されます。
 すべての操作はこのシングルトンを起点に行います。
 
-
-
 ----
 
-
-
-![.with() and .to()](D:\Desktop\with_to.gif)
-
-
+![.with() and .to()](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/docs/with_to.gif)
 
 #### バネのようにアニメーションさせたい
 
@@ -92,15 +77,9 @@ Motion \
 	.to(100.0)
 ```
 
-
-
 ----
 
-
-
-![Stop](D:\Desktop\stop.gif)
-
-
+![.stop()](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/docs/stop.gif)
 
 #### ゆっくり停止させるようにアニメーションさせたい
 
@@ -112,11 +91,7 @@ Motion.stop($Target, "target_property")
 
 他にも `.stop_method()`、`.stop_method_deferred()` というメソッドがありますが `.stop()` と似たようなものなので省略します。
 
-
-
 ----
-
-
 
 #### バネを構成したい
 
@@ -148,11 +123,7 @@ Motion \
 Motion.with($Target, "target_property", Motion.SPRING_DEFAULT)
 ```
 
-
-
 ----
-
-
 
 #### 最終位置だけではなく、初期速度や初期位置を与えたい
 
@@ -166,11 +137,7 @@ Motion \
 	.to(100.0)    # 最終位置
 ```
 
-
-
 ----
-
-
 
 #### 静止速度・距離を構成したい
 
@@ -186,11 +153,7 @@ Motion \
 
 この 2 つの条件が満たされると最終位置が設定され、速度は 0 になり、バネは静止状態に移行します。
 
-
-
 ----
-
-
 
 #### 過減衰を制限したい
 
@@ -206,11 +169,7 @@ Motion \
 
 これにより、ある程度予測可能な期間内で静止状態に移行します。
 
-
-
 ----
-
-
 
 #### オーバーシュートを制限したい
 
@@ -223,11 +182,7 @@ Motion \
 	.to(100.0)
 ```
 
-
-
 ----
-
-
 
 #### 間を設けてからアニメーションを開始したい
 
@@ -239,11 +194,7 @@ Motion \
 	.to(100.0)    # 100 までアニメーション
 ```
 
-
-
 ----
-
-
 
 #### float 以外をアニメーションさせたい
 
@@ -258,11 +209,7 @@ Motion \
 * PoolVector3Array (Vector3ArrayMotionState.gd で実装)
 * PoolColorArray (ColorArrayMotionState.gd で実装)
 
-
-
 ----
-
-
 
 #### アニメーションの開始や終了のタイミングを知りたい
 
@@ -273,11 +220,7 @@ Motion \
 * `Motion.finished` 終了したとき
 * `Motion.all_finished` すべて終了したとき
 
-
-
 ----
-
-
 
 #### プロパティの中のプロパティをアニメーションさせたい
 
@@ -290,22 +233,14 @@ Motion.with($Target, "position:x")
 例えば、`position` をアニメーションしているとき、`position:x` のアニメーションを指定すると、
 重複している内部のステートはマージされないためアニメーションが被らないよう気を付けてください。(今後対応したい)
 
-
-
 ----
-
-
 
 #### 独自の補間ロジックを実装したい
 
 `MotionGenerator` と `MotionGeneratorInit` を継承し実装します。
 `Motion.context` を経由しイニシエータを渡すと独自のアニメーションをさせることができます。(Tween のコピーを実装したいが使わないので保留中)
 
-
-
 ----
-
-
 
 #### 自分のバネの構成を保存しておきたい
 
@@ -323,16 +258,12 @@ Motion \
 	.to(100.0)
 ```
 
-
-
 ## 注意
 
 `Motion.with*()` や `Motion.stop*()` の返すビルダオブジェクトは使い捨てであり、メンバーへ保存してはいけないし、うまく動作しなくなります。
 
 もし構成を変数として保存したい場合は、`Motion.register_*_preset()` もしくは、`Motion.create_spring()` や `Motion.create_decay()` を使います。後者の返すオブジェクトはメンバーとして保存しておくことができます。
 
-
-
 ## そのほか
 
-MIT ([ここ](LICENSE.md)) です。使い勝手の改善などについて要望があれば歓迎します。[@ydipeepo](https://twitter.com/ydipeepo) まで。
+MIT ([ここ](https://github.com/ydipeepo/godot-motion/blob/main/LICENSE)) です。使い勝手の改善などについて要望があれば歓迎します。[@ydipeepo](https://twitter.com/ydipeepo) まで。
