@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/texture/unchecked.png" type="Texture" id=1]
+[ext_resource path="res://assets/texture/checked.png" type="Texture" id=2]
+[ext_resource path="res://prefab/Check.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[node name="Check" type="Control"]
+modulate = Color( 1, 1, 1, 0.247059 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -832.0
+margin_bottom = -580.0
+script = ExtResource( 3 )
+
+[node name="Label1" type="Label" parent="."]
+margin_left = 4.0
+margin_right = 76.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Label"
+valign = 1
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 108.0
+margin_right = 188.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Off"
+valign = 1
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 84.0
+margin_right = 192.0
+margin_bottom = 20.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_icons/checked = ExtResource( 2 )
+custom_icons/unchecked = ExtResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/hover_pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+align = 1
+icon_align = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CheckBox" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CheckBox" to="." method="_on_mouse_exited"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_toggled"]

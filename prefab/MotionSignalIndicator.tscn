@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://prefab/MotionSignalIndicator.gd" type="Script" id=1]
+
+[node name="MotionSignalIndicator" type="Control"]
+margin_right = 192.0
+margin_bottom = 20.0
+script = ExtResource( 1 )
+
+[node name="Started" type="ColorRect" parent="."]
+margin_right = 56.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 32, 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="StartedLabel" type="Label" parent="."]
+margin_right = 56.0
+margin_bottom = 20.0
+text = "Started"
+align = 1
+valign = 1
+
+[node name="Updated" type="ColorRect" parent="."]
+margin_left = 60.0
+margin_right = 124.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 32, 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="UpdatedLabel" type="Label" parent="."]
+margin_left = 60.0
+margin_right = 124.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 32, 8 )
+text = "Updated"
+align = 1
+valign = 1
+
+[node name="Finished" type="ColorRect" parent="."]
+margin_left = 128.0
+margin_right = 192.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 32, 8 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="FinishedLabel" type="Label" parent="."]
+margin_left = 128.0
+margin_right = 192.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 32, 8 )
+text = "Finished"
+align = 1
+valign = 1

@@ -1,0 +1,182 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "MotionState",
+"class": "ColorArrayMotionState",
+"language": "GDScript",
+"path": "res://addons/godot-motion/state/ColorArrayMotionState.gd"
+}, {
+"base": "MotionState",
+"class": "ColorMotionState",
+"language": "GDScript",
+"path": "res://addons/godot-motion/state/ColorMotionState.gd"
+}, {
+"base": "Reference",
+"class": "DecayMotionBuilder",
+"language": "GDScript",
+"path": "res://addons/godot-motion/builder/DecayMotionBuilder.gd"
+}, {
+"base": "MotionGenerator",
+"class": "DecayMotionGenerator",
+"language": "GDScript",
+"path": "res://addons/godot-motion/generator/DecayMotionGenerator.gd"
+}, {
+"base": "MotionGeneratorInit",
+"class": "DecayMotionGeneratorInit",
+"language": "GDScript",
+"path": "res://addons/godot-motion/generator/DecayMotionGeneratorInit.gd"
+}, {
+"base": "Reference",
+"class": "MotionContext",
+"language": "GDScript",
+"path": "res://addons/godot-motion/MotionContext.gd"
+}, {
+"base": "Reference",
+"class": "MotionGenerator",
+"language": "GDScript",
+"path": "res://addons/godot-motion/generator/MotionGenerator.gd"
+}, {
+"base": "Reference",
+"class": "MotionGeneratorInit",
+"language": "GDScript",
+"path": "res://addons/godot-motion/generator/MotionGeneratorInit.gd"
+}, {
+"base": "Reference",
+"class": "MotionPositionBinder",
+"language": "GDScript",
+"path": "res://addons/godot-motion/MotionPositionBinder.gd"
+}, {
+"base": "Node",
+"class": "MotionProcessor",
+"language": "GDScript",
+"path": "res://addons/godot-motion/MotionProcessor.gd"
+}, {
+"base": "Reference",
+"class": "MotionState",
+"language": "GDScript",
+"path": "res://addons/godot-motion/state/MotionState.gd"
+}, {
+"base": "Reference",
+"class": "MotionStateHelper",
+"language": "GDScript",
+"path": "res://addons/godot-motion/state/MotionStateHelper.gd"
+}, {
+"base": "MotionState",
+"class": "RealArrayMotionState",
+"language": "GDScript",
+"path": "res://addons/godot-motion/state/RealArrayMotionState.gd"
+}, {
+"base": "MotionState",
+"class": "RealMotionState",
+"language": "GDScript",
+"path": "res://addons/godot-motion/state/RealMotionState.gd"
+}, {
+"base": "Reference",
+"class": "SpringMotionBuilder",
+"language": "GDScript",
+"path": "res://addons/godot-motion/builder/SpringMotionBuilder.gd"
+}, {
+"base": "MotionGenerator",
+"class": "SpringMotionGenerator",
+"language": "GDScript",
+"path": "res://addons/godot-motion/generator/SpringMotionGenerator.gd"
+}, {
+"base": "MotionGeneratorInit",
+"class": "SpringMotionGeneratorInit",
+"language": "GDScript",
+"path": "res://addons/godot-motion/generator/SpringMotionGeneratorInit.gd"
+}, {
+"base": "Reference",
+"class": "StopMotionBuilder",
+"language": "GDScript",
+"path": "res://addons/godot-motion/builder/StopMotionBuilder.gd"
+}, {
+"base": "MotionState",
+"class": "Vector2ArrayMotionState",
+"language": "GDScript",
+"path": "res://addons/godot-motion/state/Vector2ArrayMotionState.gd"
+}, {
+"base": "MotionState",
+"class": "Vector2MotionState",
+"language": "GDScript",
+"path": "res://addons/godot-motion/state/Vector2MotionState.gd"
+}, {
+"base": "MotionState",
+"class": "Vector3ArrayMotionState",
+"language": "GDScript",
+"path": "res://addons/godot-motion/state/Vector3ArrayMotionState.gd"
+}, {
+"base": "MotionState",
+"class": "Vector3MotionState",
+"language": "GDScript",
+"path": "res://addons/godot-motion/state/Vector3MotionState.gd"
+}, {
+"base": "Reference",
+"class": "WithMotionBuilder",
+"language": "GDScript",
+"path": "res://addons/godot-motion/builder/WithMotionBuilder.gd"
+} ]
+_global_script_class_icons={
+"ColorArrayMotionState": "",
+"ColorMotionState": "",
+"DecayMotionBuilder": "",
+"DecayMotionGenerator": "",
+"DecayMotionGeneratorInit": "",
+"MotionContext": "",
+"MotionGenerator": "",
+"MotionGeneratorInit": "",
+"MotionPositionBinder": "",
+"MotionProcessor": "",
+"MotionState": "",
+"MotionStateHelper": "",
+"RealArrayMotionState": "",
+"RealMotionState": "",
+"SpringMotionBuilder": "",
+"SpringMotionGenerator": "",
+"SpringMotionGeneratorInit": "",
+"StopMotionBuilder": "",
+"Vector2ArrayMotionState": "",
+"Vector2MotionState": "",
+"Vector3ArrayMotionState": "",
+"Vector3MotionState": "",
+"WithMotionBuilder": ""
+}
+
+[application]
+
+config/name="godot-motion"
+config/description="Yet another Tween for for Godot 3. Easy as fluent syntax to use, no need adhoc logics and duration control, to kinematics based natural interpolation."
+run/main_scene="res://Demo_VisualizeMotion.tscn"
+config/icon="res://editor/icon.png"
+
+[autoload]
+
+Motion="*res://addons/godot-motion/Motion.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/godot-motion/plugin.cfg" )
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.498039, 0.498039, 0.498039, 1 )
+environment/default_environment="res://editor/default_env.tres"

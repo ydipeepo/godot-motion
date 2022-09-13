@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://prefab/MotionPointVisualizer.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1 )
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 5, 5 )
+
+[node name="MotionVector2Visualizer" type="Control"]
+margin_right = 512.0
+margin_bottom = 512.0
+script = ExtResource( 1 )
+
+[node name="PointTrail" type="Line2D" parent="."]
+width = 1.0
+default_color = Color( 1, 1, 1, 1 )
+gradient = SubResource( 2 )
+
+[node name="AxisX" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 1.0
+
+[node name="AxisY" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 1.0
+
+[node name="PointAxisX" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 1.0
+
+[node name="PointAxisXRect" type="ColorRect" parent="."]
+margin_left = 448.0
+margin_top = -8.0
+margin_right = 512.0
+margin_bottom = 8.0
+
+[node name="PointAxisXLabel" type="Label" parent="."]
+margin_left = 448.0
+margin_top = -8.0
+margin_right = 512.0
+margin_bottom = 8.0
+text = "0.0"
+align = 1
+valign = 1
+
+[node name="PointAxisY" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 1.0
+
+[node name="PointAxisYRect" type="ColorRect" parent="."]
+margin_left = -32.0
+margin_top = 496.0
+margin_right = 32.0
+margin_bottom = 512.0
+
+[node name="PointAxisYLabel" type="Label" parent="."]
+margin_left = -32.0
+margin_top = 496.0
+margin_right = 32.0
+margin_bottom = 512.0
+text = "0.0"
+align = 1
+valign = 1
+
+[node name="VelocityX" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 3.0
+
+[node name="VelocityY" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 3.0
+
+[node name="Point" type="MeshInstance2D" parent="."]
+mesh = SubResource( 1 )
+
+[connection signal="resized" from="." to="." method="_on_resized"]
