@@ -51,7 +51,7 @@ func start(
 	final_position,
 	initial_velocity) -> void:
 
-	_context.start(
+	_context.attach(
 		MotionContext.PROCESSOR_ATTACH_PROPERTY,
 		target,
 		target_property,
@@ -65,7 +65,7 @@ func start_method(
 	final_position,
 	initial_velocity) -> void:
 
-	_context.start(
+	_context.attach(
 		MotionContext.PROCESSOR_ATTACH_METHOD,
 		target,
 		target_method,
@@ -79,7 +79,7 @@ func start_method_deferred(
 	final_position,
 	initial_velocity) -> void:
 
-	_context.start(
+	_context.attach(
 		MotionContext.PROCESSOR_ATTACH_METHOD_DEFERRED,
 		target,
 		target_method,

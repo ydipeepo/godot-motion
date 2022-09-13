@@ -50,7 +50,7 @@ func get_state(
 	return processor.state if processor != null and not processor.is_expired else null
 
 # 指定したオブジェクトに対してアニメーションをアタッチします
-func start(
+func attach(
 	processor_attach: int,
 	target: Node,
 	target_key: String,
@@ -68,7 +68,7 @@ func start(
 				generator_init.final_position == null):
 
 				if 0.0 < generator_init.delay:
-					var position_binder := MotionPositionBinder.new(target, target_key)
+					var position_binder := MotionDelayedPosition.new(target, target_key)
 					if generator_init.initial_position == null:
 						generator_init.initial_position = position_binder
 					if generator_init.final_position == null:
@@ -95,6 +95,22 @@ func start(
 	if not processor_exists:
 		_container.add_child(processor)
 
+# 指定したオブジェクトに対してアタッチされたアニメーションを取り除きます
+func detach(
+	processor_attach: int,
+	target: Node,
+	target_key: String) -> void:
+
+	if _is_object_invalid(target):
+		return
+
+	var processor := _get_processor(target, target_key, processor_attach)
+	if processor != null and not processor.is_queued_for_deletion():
+		if processor.is_expired:
+			processor.free()
+		else:
+			processor.queue_free()
+
 # キャッシュ期間が経過したプロセッサを解放します
 func compact() -> void:
 	var index := _container.get_child_count()
@@ -102,7 +118,6 @@ func compact() -> void:
 		index -= 1
 		var processor := _container.get_child(index) as MotionProcessor
 		if processor != null and processor.is_expired:
-			_container.remove_child(processor)
 			processor.free()
 
 #-------------------------------------------------------------------------------
@@ -168,7 +183,7 @@ func _get_processor(
 		if processor != null and processor.name == processor_name:
 			if not processor.is_expired:
 				return processor
-			_container.remove_child(processor)
+#			_container.remove_child(processor)
 			processor.free()
 	return null
 

@@ -1,4 +1,4 @@
-class_name MotionPositionBinder
+class_name MotionDelayedPosition
 
 #-------------------------------------------------------------------------------
 # メソッド

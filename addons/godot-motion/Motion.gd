@@ -255,7 +255,7 @@ func _process(delta: float) -> void:
 		if _is_object_invalid(target):
 			continue
 
-		_context.start(
+		_context.attach(
 			processor_attach,
 			target,
 			target_key,

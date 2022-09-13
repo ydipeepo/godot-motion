@@ -16,12 +16,12 @@ static func init(
 
 	var stride := state.get_element_size()
 	for i in state.get_element_count():
-		var o: int = i * stride
+		var offset: int = i * stride
 
 		var delta_sq := 0.0
 		var speed_sq := 0.0
 		for j in stride:
-			var k: int = o + j
+			var k: int = offset + j
 			var speed := state.get_initial_velocity(k)
 			var delta := state.get_final_position(k) - state.get_initial_position(k)
 			delta_sq += delta * delta
@@ -29,14 +29,14 @@ static func init(
 
 		if speed_sq <= rest_speed_sq and delta_sq <= rest_delta_sq:
 			for j in state.get_element_size():
-				var k: int = o + j
+				var k: int = offset + j
 				state.set_position(k, state.get_final_position(k))
 				state.set_velocity(k, 0.0)
 				state.set_rest(k, true)
 
 		else:
 			for j in state.get_element_size():
-				var k: int = o + j
+				var k: int = offset + j
 				state.set_position(k, state.get_initial_position(k))
 				state.set_velocity(k, state.get_initial_velocity(k))
 				state.set_rest(k, false)

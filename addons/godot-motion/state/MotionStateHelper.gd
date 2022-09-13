@@ -7,7 +7,7 @@ class_name MotionStateHelper
 static func create(position) -> MotionState:
 	assert(position != null)
 
-	if position is MotionPositionBinder:
+	if position is MotionDelayedPosition:
 		position = position.get_value()
 
 	var state: MotionState
@@ -48,7 +48,7 @@ static func set_initial_position(state: MotionState, initial_position) -> void:
 	if initial_position == null:
 		for k in state.get_element_count() * state.get_element_size():
 			state.set_initial_position(k, state.get_position(k))
-	elif initial_position is MotionPositionBinder:
+	elif initial_position is MotionDelayedPosition:
 		state.initial_position = initial_position.get_value()
 	else:
 		state.initial_position = initial_position
@@ -59,7 +59,7 @@ static func set_final_position(state: MotionState, final_position) -> void:
 	if final_position == null:
 		for k in state.get_element_count() * state.get_element_size():
 			state.set_final_position(k, state.get_position(k))
-	elif final_position is MotionPositionBinder:
+	elif final_position is MotionDelayedPosition:
 		state.final_position = final_position.get_value()
 	else:
 		state.final_position = final_position

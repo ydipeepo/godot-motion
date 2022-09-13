@@ -40,6 +40,11 @@ _global_script_classes=[ {
 "path": "res://addons/godot-motion/MotionContext.gd"
 }, {
 "base": "Reference",
+"class": "MotionDelayedPosition",
+"language": "GDScript",
+"path": "res://addons/godot-motion/MotionDelayedPosition.gd"
+}, {
+"base": "Reference",
 "class": "MotionGenerator",
 "language": "GDScript",
 "path": "res://addons/godot-motion/generator/MotionGenerator.gd"
@@ -48,11 +53,6 @@ _global_script_classes=[ {
 "class": "MotionGeneratorInit",
 "language": "GDScript",
 "path": "res://addons/godot-motion/generator/MotionGeneratorInit.gd"
-}, {
-"base": "Reference",
-"class": "MotionPositionBinder",
-"language": "GDScript",
-"path": "res://addons/godot-motion/MotionPositionBinder.gd"
 }, {
 "base": "Node",
 "class": "MotionProcessor",
@@ -131,9 +131,9 @@ _global_script_class_icons={
 "DecayMotionGenerator": "",
 "DecayMotionGeneratorInit": "",
 "MotionContext": "",
+"MotionDelayedPosition": "",
 "MotionGenerator": "",
 "MotionGeneratorInit": "",
-"MotionPositionBinder": "",
 "MotionProcessor": "",
 "MotionState": "",
 "MotionStateHelper": "",
