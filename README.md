@@ -266,4 +266,4 @@ Motion \
 
 ## そのほか
 
-MIT ([ここ](https://github.com/ydipeepo/godot-motion/blob/main/LICENSE)) です。使い勝手の改善などについて要望があれば歓迎します。[@ydipeepo](https://twitter.com/ydipeepo) まで。
+MIT ([ここ](https://github.com/ydipeepo/godot-motion/blob/main/LICENSE.md)) です。使い勝手の改善などについて要望があれば歓迎します。[@ydipeepo](https://twitter.com/ydipeepo) まで。
