@@ -2,15 +2,16 @@
 
 Yet another Tween for for Godot 3.
 
-![Yey](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/docs/with_to.gif)
 
 * Easy as fluent syntax to use
 * No need adhoc logics
 * No need duration control
 * Kinematics based natural interpolation
 
+![Yey](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/docs/with_to.gif)
+
 ```GDScript
-Motion.with($Button, "modulate:a").from(0.0).to(1.0)
+Motion.with($Icon, "position:x").to(1000.0)
 ```
 
 <br />
