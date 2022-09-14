@@ -21,14 +21,10 @@ Yet another Tween for for Godot 3.
 
 We are still in the testing phase, so still not distributing at Godot AssetLib.
 
-<br />
-
 #### Check demos
 
 1. Git clone then open in Godot Engine.
 2. (Select `Demo_*.tscn` then) F5!
-
-<br />
 
 #### Add-on Installation
 
