@@ -2,21 +2,24 @@
 
 Yet another Tween for for Godot 3.
 
-Easy as fluent syntax to use, no need adhoc logics and duration control, to kinematics based natural interpolation.
+![Yey](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/docs/with_to.gif)
 
-<br /><br />
+* Easy as fluent syntax to use
+* No need adhoc logics
+* No need duration control
+* Kinematics based natural interpolation
 
 ```GDScript
 Motion.with($Button, "modulate:a").from(0.0).to(1.0)
 ```
 
-<br /><br /><br />
+<br />
 
 ## How do I use it?
 
 We are still in the testing phase, so still not distributing at Godot AssetLib.
 
-<br /><br />
+<br />
 
 #### Check demos
 
@@ -31,7 +34,7 @@ We are still in the testing phase, so still not distributing at Godot AssetLib.
 2. Activate `Motion` addon.
 3. Code!
 
-<br /><br /><br />
+<br />
 
 ## More details
 
