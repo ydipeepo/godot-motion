@@ -1,18 +1,19 @@
-# Godot Motion
-
-Yet another Tween for for Godot 3.
-
-
-* Easy as fluent syntax to use
-* No need adhoc logics
-* No need duration control
-* Kinematics based natural interpolation
-
 ![Yey](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/docs/with_to.gif)
 
 ```GDScript
 Motion.with($Icon, "position:x").to(1000.0)
 ```
+
+<br />
+
+# Godot Motion
+
+Yet another Tween for for Godot 3.
+
+* Easy as fluent syntax to use
+* No need adhoc logics
+* No need duration control
+* Kinematics based natural interpolation
 
 <br />
 
