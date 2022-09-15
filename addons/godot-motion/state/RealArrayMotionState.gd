@@ -4,6 +4,20 @@ class_name RealArrayMotionState extends MotionState
 # メソッド
 #-------------------------------------------------------------------------------
 
+func get_zero():
+	var zero := PoolRealArray()
+	zero.resize(get_element_count())
+	for i in get_element_count():
+		zero[i] = 0.0
+	return zero
+
+func get_one():
+	var one := PoolRealArray()
+	one.resize(get_element_count())
+	for i in get_element_count():
+		one[i] = 1.0
+	return one
+
 func get_element_count() -> int:
 	return _element_count
 

@@ -203,6 +203,15 @@ static func _elastic_d(x: float) -> float:
 	return -(10.0 * _L2 * sin(t) + _5PI * cos(t)) * pow(2.0, 10.0 * x - 10.0)
 
 static func _back_f(x: float) -> float:
+	#
+	# TODO:
+	# EASE_IN_OUT, EASE_OUT_IN において
+	# 以下と異なるため必要であれば _back_d と合わせて直す。
+	#
+	# //github.com/godotengine/godot/blob/3bd74cd67bfc5484b3f5d4b47da66c55457474c7/scene/animation/easing_equations.h#L371
+	# //upshots.org/
+	#
+
 	return 1.0 if x == 1.0 else x * x * (_S_1 * x - _S)
 
 static func _back_d(x: float) -> float:

@@ -4,6 +4,12 @@ class_name ColorMotionState extends MotionState
 # メソッド
 #-------------------------------------------------------------------------------
 
+func get_zero():
+	return Color(0.0, 0.0, 0.0, 0.0)
+
+func get_one():
+	return Color.white
+
 func get_element_count() -> int:
 	return 1
 

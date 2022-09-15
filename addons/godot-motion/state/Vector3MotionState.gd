@@ -4,6 +4,12 @@ class_name Vector3MotionState extends MotionState
 # メソッド
 #-------------------------------------------------------------------------------
 
+func get_zero():
+	return Vector3.ZERO
+
+func get_one():
+	return Vector3.ONE
+
 func get_element_count() -> int:
 	return 1
 

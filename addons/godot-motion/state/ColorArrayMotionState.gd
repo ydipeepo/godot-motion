@@ -4,6 +4,20 @@ class_name ColorArrayMotionState extends MotionState
 # メソッド
 #-------------------------------------------------------------------------------
 
+func get_zero():
+	var zero := PoolColorArray()
+	zero.resize(get_element_count())
+	for i in get_element_count():
+		zero[i] = Color(0.0, 0.0, 0.0, 0.0)
+	return zero
+
+func get_one():
+	var one := PoolColorArray()
+	one.resize(get_element_count())
+	for i in get_element_count():
+		one[i] = Color.white
+	return one
+
 func get_element_count() -> int:
 	return _element_count
 

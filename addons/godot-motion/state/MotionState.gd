@@ -15,6 +15,24 @@ var final_position
 # メソッド
 #-------------------------------------------------------------------------------
 
+# すべての要素が 0 の値を返します
+func get_zero():
+	#
+	# 継承先で実装する必要があります
+	#
+
+	assert(false)
+	return null
+
+# すべての要素が 1 の値を返します
+func get_one():
+	#
+	# 継承先で実装する必要があります
+	#
+
+	assert(false)
+	return null
+
 # 要素数を返します
 func get_element_count() -> int:
 	#

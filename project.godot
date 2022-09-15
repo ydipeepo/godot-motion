@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-motion/state/ColorMotionState.gd"
 }, {
-"base": "Reference",
+"base": "MotionBuilder",
 "class": "DecayMotionBuilder",
 "language": "GDScript",
 "path": "res://addons/godot-motion/builder/DecayMotionBuilder.gd"
@@ -35,9 +35,14 @@ _global_script_classes=[ {
 "path": "res://addons/godot-motion/generator/DecayMotionGeneratorInit.gd"
 }, {
 "base": "Reference",
-"class": "EaseMotionBuilder",
+"class": "EaseMotionExpression",
 "language": "GDScript",
-"path": "res://addons/godot-motion/builder/EaseMotionBuilder.gd"
+"path": "res://addons/godot-motion/expression/EaseMotionExpression.gd"
+}, {
+"base": "Reference",
+"class": "MotionBuilder",
+"language": "GDScript",
+"path": "res://addons/godot-motion/builder/MotionBuilder.gd"
 }, {
 "base": "Reference",
 "class": "MotionContext",
@@ -84,7 +89,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-motion/state/RealMotionState.gd"
 }, {
-"base": "Reference",
+"base": "MotionBuilder",
 "class": "SpringMotionBuilder",
 "language": "GDScript",
 "path": "res://addons/godot-motion/builder/SpringMotionBuilder.gd"
@@ -100,11 +105,11 @@ _global_script_classes=[ {
 "path": "res://addons/godot-motion/generator/SpringMotionGeneratorInit.gd"
 }, {
 "base": "Reference",
-"class": "StopMotionBuilder",
+"class": "StopMotionExpression",
 "language": "GDScript",
-"path": "res://addons/godot-motion/builder/StopMotionBuilder.gd"
+"path": "res://addons/godot-motion/expression/StopMotionExpression.gd"
 }, {
-"base": "Reference",
+"base": "MotionBuilder",
 "class": "TweenMotionBuilder",
 "language": "GDScript",
 "path": "res://addons/godot-motion/builder/TweenMotionBuilder.gd"
@@ -140,9 +145,9 @@ _global_script_classes=[ {
 "path": "res://addons/godot-motion/state/Vector3MotionState.gd"
 }, {
 "base": "Reference",
-"class": "WithMotionBuilder",
+"class": "WithMotionExpression",
 "language": "GDScript",
-"path": "res://addons/godot-motion/builder/WithMotionBuilder.gd"
+"path": "res://addons/godot-motion/expression/WithMotionExpression.gd"
 } ]
 _global_script_class_icons={
 "ColorArrayMotionState": "",
@@ -150,7 +155,8 @@ _global_script_class_icons={
 "DecayMotionBuilder": "",
 "DecayMotionGenerator": "",
 "DecayMotionGeneratorInit": "",
-"EaseMotionBuilder": "",
+"EaseMotionExpression": "",
+"MotionBuilder": "",
 "MotionContext": "",
 "MotionDelayedPosition": "",
 "MotionGenerator": "",
@@ -163,7 +169,7 @@ _global_script_class_icons={
 "SpringMotionBuilder": "",
 "SpringMotionGenerator": "",
 "SpringMotionGeneratorInit": "",
-"StopMotionBuilder": "",
+"StopMotionExpression": "",
 "TweenMotionBuilder": "",
 "TweenMotionGenerator": "",
 "TweenMotionGeneratorInit": "",
@@ -171,14 +177,14 @@ _global_script_class_icons={
 "Vector2MotionState": "",
 "Vector3ArrayMotionState": "",
 "Vector3MotionState": "",
-"WithMotionBuilder": ""
+"WithMotionExpression": ""
 }
 
 [application]
 
 config/name="godot-motion"
 config/description="Yet another Tween for for Godot 3. Easy as fluent syntax to use, no need adhoc logics and duration control, to kinematics based natural interpolation."
-run/main_scene="res://Demo_Tween.tscn"
+run/main_scene="res://scenes/Demo_VisualizeMotion.tscn"
 config/icon="res://editor/icon.png"
 
 [autoload]

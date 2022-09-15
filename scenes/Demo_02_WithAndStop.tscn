@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://editor/icon.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Demo_02_WithAndStop.gd" type="Script" id=2]
+
+[node name="Demo_02_WithAndStop" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="With" type="Button" parent="."]
+margin_left = 872.0
+margin_top = 544.0
+margin_right = 930.0
+margin_bottom = 576.0
+text = ".with()"
+
+[node name="Stop" type="Button" parent="."]
+margin_left = 936.0
+margin_top = 544.0
+margin_right = 992.0
+margin_bottom = 576.0
+text = ".stop()"
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 64, 64 )
+texture = ExtResource( 1 )
+
+[connection signal="pressed" from="With" to="." method="_on_With_pressed"]
+[connection signal="pressed" from="Stop" to="." method="_on_Stop_pressed"]

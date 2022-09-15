@@ -74,6 +74,7 @@ func queue_free() -> void:
 
 	_process_state = _PROCESS_STATE_EXPIRED
 	.set_process(false)
+	.set_physics_process(false)
 
 #-------------------------------------------------------------------------------
 
@@ -101,8 +102,16 @@ var _generator: MotionGenerator
 var _cache_duration := 0.0
 var _cache_timer := 0.0
 
-func _process(delta) -> void:
+func _ready() -> void:
 	assert(state != null)
+
+func _process(delta: float) -> void:
+	_handle(delta)
+
+func _physics_process(delta: float) -> void:
+	_handle(delta)
+
+func _handle(delta) -> void:
 	assert(_process_state != _PROCESS_STATE_EXPIRED)
 
 	if _process_state == _PROCESS_STATE_STARTING:
@@ -132,6 +141,7 @@ func _process(delta) -> void:
 
 	assert(_process_state == _PROCESS_STATE_EXPIRED)
 	.set_process(false)
+	.set_physics_process(false)
 
 func _handle_start(
 	delta: float,

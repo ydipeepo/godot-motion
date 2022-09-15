@@ -4,6 +4,20 @@ class_name Vector3ArrayMotionState extends MotionState
 # メソッド
 #-------------------------------------------------------------------------------
 
+func get_zero():
+	var zero := PoolVector3Array()
+	zero.resize(get_element_count())
+	for i in get_element_count():
+		zero[i] = Vector3.ZERO
+	return zero
+
+func get_one():
+	var one := PoolVector3Array()
+	one.resize(get_element_count())
+	for i in get_element_count():
+		one[i] = Vector3.ONE
+	return one
+
 func get_element_count() -> int:
 	return _element_count
 

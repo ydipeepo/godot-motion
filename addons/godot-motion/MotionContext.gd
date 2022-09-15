@@ -26,12 +26,36 @@ enum {
 	PROCESSOR_ATTACH_METHOD_DEFERRED,
 }
 
+enum {
+	# プロセッサは _process により処理を行います
+	PROCESSOR_UPDATE_DEFAULT,
+	# プロセッサは _physics_process により処理を行います
+	PROCESSOR_UPDATE_PHYSICS,
+}
+
+enum {
+	# 跳ね返りのない標準的な動きのバネアニメーションプリセット (stiff=170, damping=26)
+	SPRING_STANDARD,
+	# 優しめの動きのバネアニメーションプリセット (stiff=120, damping=14)
+	SPRING_GENTLE,
+	# ぐらついたような動きのバネアニメーションプリセット (stiff=210, damping=20)
+	SPRING_WOBBLY,
+	# 硬めの動きのバネアニメーションプリセット (stiff=210, damping=60)
+	SPRING_STIFF,
+	# 遅めの動きのバネアニメーションプリセット (stiff=280, damping=60)
+	SPRING_SLOW,
+	# 蜜が滴るような動きのバネアニメーションプリセット (stiff=280, damping=120)
+	SPRING_MOLASSES,
+}
+
 #-------------------------------------------------------------------------------
 # プロパティ
 #-------------------------------------------------------------------------------
 
 # プロセッサのキャッシュ期間
 var processor_cache_duration: float setget _set_processor_cache_duration, _get_processor_cache_duration
+# プロセッサ数
+var processor_count: int setget , _get_processor_count
 
 #-------------------------------------------------------------------------------
 # メソッド
@@ -49,8 +73,37 @@ func get_state(
 	var processor := _get_processor(target, target_property, processor_attach)
 	return processor.state if processor != null and not processor.is_expired else null
 
+# バネアニメーションのビルダを作成します
+func create_spring(preset = null) -> SpringMotionBuilder:
+	assert(preset == null or typeof(preset) == TYPE_INT)
+
+	var builder := SpringMotionBuilder.new(self)
+	match preset:
+		SPRING_STANDARD:
+			builder.set_stiffness(170.0).set_damping(26.0)
+		SPRING_GENTLE:
+			builder.set_stiffness(120.0).set_damping(14.0)
+		SPRING_WOBBLY:
+			builder.set_stiffness(180.0).set_damping(12.0)
+		SPRING_STIFF:
+			builder.set_stiffness(210.0).set_damping(20.0)
+		SPRING_SLOW:
+			builder.set_stiffness(280.0).set_damping(60.0)
+		SPRING_MOLASSES:
+			builder.set_stiffness(280.0).set_damping(120.0)
+	return builder
+
+# 減衰アニメーションのビルダを作成します
+func create_decay() -> DecayMotionBuilder:
+	return DecayMotionBuilder.new(self)
+
+# Tween アニメーションのビルダを作成します
+func create_tween() -> TweenMotionBuilder:
+	return TweenMotionBuilder.new(self)
+
 # 指定したオブジェクトに対してアニメーションをアタッチします
-func attach(
+func attach_processor(
+	processor_update: int,
 	processor_attach: int,
 	target: Node,
 	target_key: String,
@@ -61,6 +114,13 @@ func attach(
 
 	var processor := _get_processor(target, target_key, processor_attach)
 	var processor_exists := processor != null
+
+	if not processor_exists:
+		processor = MotionProcessor.new()
+		processor.name = _create_processor_name(target, target_key, processor_attach)
+		processor.connect("started", self, "_on_processor_started", [target, target_key, processor, processor_attach])
+		processor.connect("updated", self, "_on_processor_updated", [target, target_key, processor, processor_attach])
+		processor.connect("finished", self, "_on_processor_finished", [target, target_key, processor, processor_attach])
 
 	match processor_attach:
 		PROCESSOR_ATTACH_PROPERTY:
@@ -79,24 +139,48 @@ func attach(
 						generator_init.initial_position = position
 					if generator_init.final_position == null:
 						generator_init.final_position = position
-	assert(generator_init.initial_position != null)
-	assert(generator_init.final_position != null)
 
-	if not processor_exists:
-		processor = MotionProcessor.new()
-		processor.state = MotionStateHelper.create(generator_init.initial_position)
-		processor.name = _create_processor_name(target, target_key, processor_attach)
-		processor.connect("started", self, "_on_processor_started", [target, target_key, processor, processor_attach])
-		processor.connect("updated", self, "_on_processor_updated", [target, target_key, processor, processor_attach])
-		processor.connect("finished", self, "_on_processor_finished", [target, target_key, processor, processor_attach])
+			if not processor_exists:
+				processor.state = MotionStateHelper.create(generator_init.initial_position)
+
+		PROCESSOR_ATTACH_METHOD, PROCESSOR_ATTACH_METHOD_DEFERRED:
+			if not processor_exists:
+				assert(
+					generator_init.initial_position != null or
+					generator_init.final_position != null)
+
+				var position
+				if generator_init.initial_position != null:
+					position = generator_init.initial_position
+				if generator_init.final_position != null:
+					position = generator_init.final_position
+				processor.state = MotionStateHelper.create(position)
+
+				if generator_init.initial_position == null:
+					generator_init.initial_position = processor.state.get_zero()
+				if generator_init.final_position == null:
+					generator_init.final_position = processor.state.get_one()
 
 	processor.start(generator_init, _processor_cache_duration)
 
-	if not processor_exists:
+	if processor_exists:
+		_container.move_child(processor, _container.get_child_count())
+
+	else:
 		_container.add_child(processor)
 
+	match processor_update:
+		PROCESSOR_UPDATE_DEFAULT:
+			processor.set_process(true)
+			processor.set_physics_process(false)
+		PROCESSOR_UPDATE_PHYSICS:
+			processor.set_process(false)
+			processor.set_physics_process(true)
+		_:
+			assert(false)
+
 # 指定したオブジェクトに対してアタッチされたアニメーションを取り除きます
-func detach(
+func detach_processor(
 	processor_attach: int,
 	target: Node,
 	target_key: String) -> void:
@@ -129,6 +213,9 @@ func _set_processor_cache_duration(value: float) -> void:
 func _get_processor_cache_duration() -> float:
 	return _processor_cache_duration
 
+func _get_processor_count() -> int:
+	return _processor_count
+
 var _container: Node
 var _processor_cache_duration := 8.0
 var _processor_count := 0
@@ -152,16 +239,14 @@ static func _create_processor_name(
 	var processor_name: String
 	match processor_attach:
 		PROCESSOR_ATTACH_PROPERTY:
-			processor_name = "Spring_%s_Property_%d_At_%s" % [
-				object.name,
-				object.get_instance_id(),
+			processor_name = "Prop_%s_at_%d" % [
 				object_key.replace(":", "__").replace(".", "_").replace("/", "_"),
+				object.get_instance_id(),
 			]
 		PROCESSOR_ATTACH_METHOD, PROCESSOR_ATTACH_METHOD_DEFERRED:
-			processor_name = "Spring_%s_Method_%d_At_%s" % [
-				object.name,
-				object.get_instance_id(),
+			processor_name = "Call_%s_at_%d" % [
 				object_key.replace(":", "__").replace(".", "_").replace("/", "_"),
+				object.get_instance_id(),
 			]
 		_:
 			assert(false)
@@ -183,7 +268,6 @@ func _get_processor(
 		if processor != null and processor.name == processor_name:
 			if not processor.is_expired:
 				return processor
-#			_container.remove_child(processor)
 			processor.free()
 	return null
 

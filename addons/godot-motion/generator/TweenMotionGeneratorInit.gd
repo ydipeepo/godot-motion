@@ -1,15 +1,23 @@
 class_name TweenMotionGeneratorInit extends MotionGeneratorInit
 
 #-------------------------------------------------------------------------------
+# 定数
+#-------------------------------------------------------------------------------
+
+const DEFAULT_DURATION := 1.0
+const DEFAULT_EASE_TYPE := Tween.EASE_IN_OUT
+const DEFAULT_TRANS_TYPE := Tween.TRANS_LINEAR
+
+#-------------------------------------------------------------------------------
 # プロパティ
 #-------------------------------------------------------------------------------
 
 # アニメーション期間
-var duration := 0.35
+var duration := DEFAULT_DURATION
 # イージングタイプ
-var ease_type := Tween.EASE_IN_OUT
+var ease_type := DEFAULT_EASE_TYPE
 # トランジションタイプ
-var trans_type := Tween.TRANS_LINEAR
+var trans_type := DEFAULT_TRANS_TYPE
 
 #-------------------------------------------------------------------------------
 # メソッド

@@ -1,8 +1,26 @@
-class_name TweenMotionBuilder
+class_name TweenMotionBuilder extends MotionBuilder
 
 #-------------------------------------------------------------------------------
 # メソッド
 #-------------------------------------------------------------------------------
+
+func get_context():
+	return _context
+
+func build_generator_init(
+	initial_position,
+	final_position,
+	initial_velocity) -> MotionGeneratorInit:
+
+	var generator_init := TweenMotionGeneratorInit.new()
+	generator_init.duration = _duration
+	generator_init.ease_type = _ease_type
+	generator_init.trans_type = _trans_type
+	generator_init.initial_position = initial_position
+	generator_init.final_position = final_position
+	generator_init.initial_velocity = initial_velocity
+	generator_init.delay = _delay
+	return generator_init
 
 # アニメーション期間を設定します
 func set_duration(value: float) -> TweenMotionBuilder:
@@ -21,75 +39,21 @@ func set_trans(trans_type: int) -> TweenMotionBuilder:
 	return self
 
 # 開始までの遅延を設定します
-func delay(value: float) -> TweenMotionBuilder:
+func set_delay(value: float) -> TweenMotionBuilder:
 	assert(0.0 <= value)
 	_delay = value
 	return self
 
-# 開始までの遅延を解除します
-func undelay() -> TweenMotionBuilder:
-	_delay = 0.0
-	return self
-
-# 指定したオブジェクトプロパティに対してバネアニメーションをアタッチします
-func start(
-	target: Node,
-	target_property: NodePath,
-	initial_position,
-	final_position,
-	initial_velocity) -> void:
-
-	_context.attach(
-		MotionContext.PROCESSOR_ATTACH_PROPERTY,
-		target,
-		target_property,
-		_create_generator_init())
-
-# 指定したオブジェクトメソッドに対してバネアニメーションをアタッチします
-func start_method(
-	target: Node,
-	target_method: String,
-	initial_position,
-	final_position,
-	initial_velocity) -> void:
-
-	_context.attach(
-		MotionContext.PROCESSOR_ATTACH_METHOD,
-		target,
-		target_method,
-		_create_generator_init())
-
-# 指定したオブジェクトメソッド (call_deferred()) に対してバネアニメーションをアタッチします
-func start_method_deferred(
-	target: Node,
-	target_method: String,
-	initial_position,
-	final_position,
-	initial_velocity) -> void:
-
-	_context.attach(
-		MotionContext.PROCESSOR_ATTACH_METHOD_DEFERRED,
-		target,
-		target_method,
-		_create_generator_init())
-
 #-------------------------------------------------------------------------------
 
-var _context: MotionContext
-var _duration := 0.35
-var _ease_type := Tween.EASE_IN_OUT
-var _trans_type := Tween.TRANS_LINEAR
+var _context
+
+var _duration := TweenMotionGeneratorInit.DEFAULT_DURATION
+var _ease_type := TweenMotionGeneratorInit.DEFAULT_EASE_TYPE
+var _trans_type := TweenMotionGeneratorInit.DEFAULT_TRANS_TYPE
 var _delay := 0.0
 
-func _init(context: MotionContext) -> void:
+func _init(context) -> void:
 	assert(context != null)
 
 	_context = context
-
-func _create_generator_init() -> MotionGeneratorInit:
-	var generator_init := TweenMotionGeneratorInit.new()
-	generator_init.duration = _duration
-	generator_init.ease_type = _ease_type
-	generator_init.trans_type = _trans_type
-	generator_init.delay = _delay
-	return generator_init

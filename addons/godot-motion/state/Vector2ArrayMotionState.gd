@@ -4,6 +4,20 @@ class_name Vector2ArrayMotionState extends MotionState
 # メソッド
 #-------------------------------------------------------------------------------
 
+func get_zero():
+	var zero := PoolVector2Array()
+	zero.resize(get_element_count())
+	for i in get_element_count():
+		zero[i] = Vector2.ZERO
+	return zero
+
+func get_one():
+	var one := PoolVector2Array()
+	one.resize(get_element_count())
+	for i in get_element_count():
+		one[i] = Vector2.ONE
+	return one
+
 func get_element_count() -> int:
 	return _element_count
 

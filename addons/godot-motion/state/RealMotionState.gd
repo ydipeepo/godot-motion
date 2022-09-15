@@ -4,6 +4,12 @@ class_name RealMotionState extends MotionState
 # メソッド
 #-------------------------------------------------------------------------------
 
+func get_zero():
+	return 0.0
+
+func get_one():
+	return 1.0
+
 func get_element_count() -> int:
 	return 1
 
