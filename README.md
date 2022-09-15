@@ -14,6 +14,7 @@ Yet another Tween for for Godot 3.
 * No need adhoc logics
 * No need duration control
 * Kinematics based natural interpolation
+* Also has the same features as Tween
 
 <br />
 
