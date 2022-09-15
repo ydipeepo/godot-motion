@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Demo_Tween.gd" type="Script" id=1]
+[ext_resource path="res://editor/icon.png" type="Texture" id=2]
+
+[node name="Demo_Tween" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="TransType" type="ItemList" parent="."]
+margin_left = 8.0
+margin_top = 328.0
+margin_right = 256.0
+margin_bottom = 512.0
+
+[node name="In" type="Button" parent="."]
+margin_left = 264.0
+margin_top = 328.0
+margin_right = 320.0
+margin_bottom = 352.0
+text = "In"
+
+[node name="Out" type="Button" parent="."]
+margin_left = 264.0
+margin_top = 360.0
+margin_right = 320.0
+margin_bottom = 384.0
+text = "Out"
+
+[node name="InOut" type="Button" parent="."]
+margin_left = 264.0
+margin_top = 392.0
+margin_right = 320.0
+margin_bottom = 416.0
+text = "InOut"
+
+[node name="OutIn" type="Button" parent="."]
+margin_left = 264.0
+margin_top = 424.0
+margin_right = 320.0
+margin_bottom = 448.0
+text = "OutIn"
+
+[node name="Reset" type="Button" parent="."]
+margin_left = 264.0
+margin_top = 488.0
+margin_right = 320.0
+margin_bottom = 512.0
+text = "Reset"
+
+[node name="Stop" type="Button" parent="."]
+margin_left = 264.0
+margin_top = 456.0
+margin_right = 320.0
+margin_bottom = 480.0
+text = "Stop"
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 500, 139 )
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 5.0
+
+[node name="Icon1" type="Sprite" parent="."]
+position = Vector2( 128, 128 )
+texture = ExtResource( 2 )
+
+[node name="Icon2" type="Sprite" parent="."]
+position = Vector2( 128, 224 )
+texture = ExtResource( 2 )
+
+[node name="Label1" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 120.0
+margin_right = 96.0
+margin_bottom = 136.0
+text = "Motion"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 216.0
+margin_right = 96.0
+margin_bottom = 232.0
+text = "Tween"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="In" to="." method="_on_In_pressed"]
+[connection signal="pressed" from="Out" to="." method="_on_Out_pressed"]
+[connection signal="pressed" from="InOut" to="." method="_on_InOut_pressed"]
+[connection signal="pressed" from="OutIn" to="." method="_on_OutIn_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_Reset_pressed"]
+[connection signal="pressed" from="Stop" to="." method="_on_Stop_pressed"]

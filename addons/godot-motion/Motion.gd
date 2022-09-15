@@ -96,6 +96,15 @@ func create_decay(preset_or_preset_name = null) -> DecayMotionBuilder:
 		DecayMotionBuilder.new(_context),
 		preset_or_preset_name)
 
+# Tween アニメーションのビルダを作成します
+func create_between() -> TweenMotionBuilder:
+	#
+	# NOTE:
+	# create_tween だと名前が被ってしまう
+	#
+
+	return TweenMotionBuilder.new(_context)
+
 # 指定したオブジェクトプロパティに対してバネアニメーションをアタッチします
 func with(
 	object: Node,
@@ -227,6 +236,66 @@ func stop_method_deferred(
 	return _set_decay_preset(
 		StopMotionBuilder.new(generator_init),
 		decay_preset_or_preset_name)
+
+# 指定したオブジェクトプロパティに対して Tween アニメーションをアタッチします
+func ease(
+	object: Node,
+	object_property: NodePath,
+	decay_preset_or_preset_name = null) -> EaseMotionBuilder:
+
+	assert(object != null)
+	assert(object_property != null)
+
+	var generator_init := TweenMotionGeneratorInit.new()
+
+	_context_start_args_list.append([
+		MotionContext.PROCESSOR_ATTACH_PROPERTY,
+		object,
+		object_property,
+		generator_init,
+	])
+
+	return EaseMotionBuilder.new(generator_init)
+
+# 指定したオブジェクトメソッドに対して Tween アニメーションをアタッチします
+func ease_method(
+	object: Node,
+	object_method: String,
+	decay_preset_or_preset_name = null) -> EaseMotionBuilder:
+
+	assert(object != null)
+	assert(object_method != null)
+
+	var generator_init := TweenMotionGeneratorInit.new()
+
+	_context_start_args_list.append([
+		MotionContext.PROCESSOR_ATTACH_METHOD,
+		object,
+		object_method,
+		generator_init,
+	])
+
+	return EaseMotionBuilder.new(generator_init)
+
+# 指定したオブジェクトメソッド (call_deferred()) に対して Tween アニメーションをアタッチします
+func ease_method_deferred(
+	object: Node,
+	object_method: String,
+	decay_preset_or_preset_name = null) -> EaseMotionBuilder:
+
+	assert(object != null)
+	assert(object_method != null)
+
+	var generator_init := TweenMotionGeneratorInit.new()
+
+	_context_start_args_list.append([
+		MotionContext.PROCESSOR_ATTACH_METHOD_DEFERRED,
+		object,
+		object_method,
+		generator_init,
+	])
+
+	return EaseMotionBuilder.new(generator_init)
 
 #-------------------------------------------------------------------------------
 
