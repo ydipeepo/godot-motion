@@ -178,7 +178,7 @@ _global_script_class_icons={
 
 config/name="godot-motion"
 config/description="Yet another Tween for for Godot 3. Easy as fluent syntax to use, no need adhoc logics and duration control, to kinematics based natural interpolation."
-run/main_scene="res://Demo_VisualizeMotion.tscn"
+run/main_scene="res://Demo_Tween.tscn"
 config/icon="res://editor/icon.png"
 
 [autoload]
