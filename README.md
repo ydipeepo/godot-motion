@@ -1,8 +1,4 @@
-![Motion](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/header.gif)
-
-```GDScript
-Motion.with($Icon, "position:x").to(1000.0)
-```
+![Motion](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/header.png)
 
 <br />
 
@@ -25,7 +21,7 @@ We are still in the testing phase, so still not distributing at Godot AssetLib.
 #### Check demos
 
 1. Git clone then open in Godot Engine.
-2. (Select `Demo_*.tscn` then) F5!
+2. (Select `demo/Demo_*.tscn` as Main Scene then) F5!
 
 #### Add-on Installation
 
