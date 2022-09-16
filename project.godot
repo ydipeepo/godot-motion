@@ -184,8 +184,8 @@ _global_script_class_icons={
 
 config/name="godot-motion"
 config/description="Yet another Tween for for Godot 3. Easy as fluent syntax to use, no need adhoc logics and duration control, to kinematics based natural interpolation."
-run/main_scene="res://scenes/Demo_VisualizeMotion.tscn"
-config/icon="res://editor/icon.png"
+run/main_scene="res://demo/Demo_VisualizeMotion.tscn"
+config/icon="res://icon.png"
 
 [autoload]
 
@@ -209,4 +209,4 @@ quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_clear_color=Color( 0.498039, 0.498039, 0.498039, 1 )
-environment/default_environment="res://editor/default_env.tres"
+environment/default_environment="res://default_env.tres"

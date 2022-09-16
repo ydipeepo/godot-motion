@@ -1,0 +1,5 @@
+.import/
+*/*.import
+output/
+export.cfg
+export_presets.cfg

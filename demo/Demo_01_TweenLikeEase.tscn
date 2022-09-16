@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://editor/icon.png" type="Texture" id=1]
-[ext_resource path="res://scenes/Demo_01_TweenLikeEase.gd" type="Script" id=2]
+[ext_resource path="res://header.png" type="Texture" id=1]
+[ext_resource path="res://demo/Demo_01_TweenLikeEase.gd" type="Script" id=2]
 
 [node name="Demo_01_TweenLikeEase" type="Control"]
 anchor_right = 1.0

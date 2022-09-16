@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/Demo_VisualizeMotion.gd" type="Script" id=1]
-[ext_resource path="res://prefab/MotionPointVisualizer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://prefab/MotionSignalIndicator.tscn" type="PackedScene" id=3]
-[ext_resource path="res://prefab/Slider.tscn" type="PackedScene" id=5]
-[ext_resource path="res://prefab/Check.tscn" type="PackedScene" id=7]
+[ext_resource path="res://demo/Demo_VisualizeMotion.gd" type="Script" id=1]
+[ext_resource path="res://demo/prefab/MotionPointVisualizer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://demo/prefab/MotionSignalIndicator.tscn" type="PackedScene" id=3]
+[ext_resource path="res://demo/prefab/Slider.tscn" type="PackedScene" id=5]
+[ext_resource path="res://demo/prefab/Check.tscn" type="PackedScene" id=7]
 
 [node name="Demo01_VisualizeMotion" type="Control"]
 anchor_right = 1.0
