@@ -28,12 +28,6 @@ Yet another Tween for for Godot 3.
 
 <br />
 
-![Capture #1](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/capture_01.jpg)
-
-![Capture #2](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/capture_02.jpg)
-
-<br />
-
 ## How do I use it?
 
 We are still in the testing phase, so still not distributing at Godot AssetLib.
