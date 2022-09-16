@@ -1,3 +1,9 @@
+[![MIT License](https://img.shields.io/badge/License-MIT-25B3A0?style=flat-square)](https://github.com/ydipeepo/godot-motion/blob/main/LICENSE.md)
+[![Download](https://img.shields.io/badge/Download-1.0.0-DA1160?style=flat-square)](https://github.com/ydipeepo/godot-motion/releases/tag/stable)
+[![@ydipeepo](https://img.shields.io/badge/@ydipeepo-1DA1F2?style=flat-square&logo=twitter&logoColor=white)](https://twitter.com/ydipeepo)
+
+<br />
+
 ![Motion](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/header.png)
 
 <br />
