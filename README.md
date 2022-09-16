@@ -1,4 +1,4 @@
-![Yey](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/docs/with_to.gif)
+![Motion](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/header.gif)
 
 ```GDScript
 Motion.with($Icon, "position:x").to(1000.0)
