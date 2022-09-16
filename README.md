@@ -31,6 +31,12 @@ We are still in the testing phase, so still not distributing at Godot AssetLib.
 
 <br />
 
+![Capture #1](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/capture_01.jpg)
+
+![Capture #2](https://raw.githubusercontent.com/ydipeepo/godot-motion/main/capture_02.jpg)
+
+<br />
+
 ## More details
 
 Please see [Wiki](https://github.com/ydipeepo/godot-motion/wiki) pages.
