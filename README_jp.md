@@ -1,4 +1,4 @@
-[English](https://github.com/ydipeepo/godot-motion/blob/main/README.md) | 日本語
+[English](https://github.com/ydipeepo/godot-motion/blob/main/README.md) | 日本語 | [简体中文](https://github.com/ydipeepo/godot-motion/blob/main/README_zh.md)
 
 <br />
 
