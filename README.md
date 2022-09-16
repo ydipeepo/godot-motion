@@ -1,3 +1,5 @@
+English | [日本語](https://github.com/ydipeepo/godot-motion/blob/main/README_jp.md)
+
 <br />
 
 [![MIT License](https://img.shields.io/badge/License-MIT-25B3A0?style=flat-square)](https://github.com/ydipeepo/godot-motion/blob/main/LICENSE.md)
