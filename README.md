@@ -118,7 +118,7 @@ Often called Tween everywhere, the most familiar animation. This is the same as 
 but with the drawback that it has no velocity information.
 
 * [Tween-like EBS configuration methods](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/expression/EaseMotionExpression.gd)
-* [Tween-like ECS configuration & bind methods](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/TweenMotionBuilder.gd)
+* [Tween-like ECS configuration](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/TweenMotionBuilder.gd) & [bind methods](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
 
 #### Spring
 
@@ -126,14 +126,14 @@ Kinematics based spring animation. This animation type will be the most used in/
 It has velocity and can be connected smoothly even in the middle of animations.
 
 * [Spring EBS configuration methods](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/expression/WithMotionExpression.gd)
-* [Spring ECS configuration & bind methods](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/SpringMotionBuilder.gd)
+* [Spring ECS configuration](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/SpringMotionBuilder.gd) & [bind methods](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
 
 #### Decay
 
 Exponential decay animation. This is a bit special, that gradually decelerates from the velocity at that point.
 
 * [Decay EBS configuration methods](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/expression/StopMotionExpression.gd)
-* [Decay ECS configuration and & methods](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/DecayMotionBuilder.gd)
+* [Decay ECS configuration](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/DecayMotionBuilder.gd) & [bind methods](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
 
 <br />
 
