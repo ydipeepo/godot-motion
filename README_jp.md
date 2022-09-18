@@ -119,22 +119,22 @@ my_tween.start($Who, "what_property", null, 100.0)
 Tween と呼ばれることが多く、最も身近な補間アニメーションセットです。これは Tween ノードと同じですが、速度を持たないという欠点があります。
 
 * [Tween 風、早期バインディングにおける構成メソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/expression/EaseMotionExpression.gd)
-* [Tween 風、早期構成における構成メソッドとバインディングメソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/TweenMotionBuilder.gd)
+* [Tween 風、早期構成における構成メソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/TweenMotionBuilder.gd) と
+[バインディングメソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
 
 #### バネ
 
 物理ベースのバネアニメーションです。このアニメーションは恐らくこのアドオンで最も使用されます。速度があり、アニメーションの途中であっても滑らかに次のアニメーションへ繋げることができます。
 
 * [バネ、早期バインディングにおける構成メソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/expression/WithMotionExpression.gd)
-* [バネ、早期構成における構成メソッドとバインディングメソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/SpringMotionBuilder.gd)
+* [バネ、早期構成における構成メソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/SpringMotionBuilder.gd) と [バインディングメソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
 
 #### 減衰
 
 指数関数的な減衰アニメーションです。これは少し特殊で、その時点の速度を元に、徐々に減速していくアニメーションです。
 
 * [減衰、早期バインディングにおける構成メソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/expression/StopMotionExpression.gd)
-* [減衰、早期構成における構成メソッドとバインディングメソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/DecayMotionBuilder.gd)
-
+* [減衰、早期構成における構成メソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/DecayMotionBuilder.gd) と [バインディングメソッドの一覧](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
 <br />
 
 ---
