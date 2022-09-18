@@ -114,21 +114,21 @@ my_tween.start($Who, "what_property", null, 100.0)
 经常被称为 Tween，大家最熟悉的动画。这与 Tween 节点相同，但缺点是它没有速度信息。
 
 * [Tween 风动画 (早期对象绑定写法) 配置方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/expression/EaseMotionExpression.gd)
-* [Tween 风动画 (早期配置写法) 配置方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/TweenMotionBuilder.gd) 和 [对象绑定方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
+* [Tween 风动画 (早期配置写法) 配置方法](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/TweenMotionBuilder.gd) 和 [对象绑定方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
 
 #### 弹簧动画
 
 运动学基于弹簧动画。此动画类型将是此插件中使用最多的动画类。它具有速度，即使在动画中间也可以平滑连接。
 
 * [弹簧动画 (早期对象绑定写法) 配置方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/expression/WithMotionExpression.gd)
-* [弹簧动画 (早期配置写法) 配置方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/SpringMotionBuilder.gd) 和 [对象绑定方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
+* [弹簧动画 (早期配置写法) 配置方法](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/SpringMotionBuilder.gd) 和 [对象绑定方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
 
 #### 衰减动画
 
 指数衰减动画。这有点特别，它从那个点的速度开始逐渐减速。
 
 * [衰减动画 (早期对象绑定写法) 配置方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/expression/StopMotionExpression.gd)
-* [衰减动画 (早期配置写法) 配置方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/DecayMotionBuilder.gd) 和 [对象绑定方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
+* [衰减动画 (早期配置写法) 配置方法](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/DecayMotionBuilder.gd) 和 [对象绑定方法一览](https://github.com/ydipeepo/godot-motion/blob/main/addons/godot-motion/builder/MotionBuilder.gd)
 
 <br />
 
