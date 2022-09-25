@@ -101,10 +101,10 @@ func _init(element_count: int) -> void:
 
 	_element_count = element_count
 
-	position = PoolColorArray()
+	position = PoolRealArray()
 	position.resize(_element_count)
 	for dimension in _element_count:
-		position[dimension] = Color(0.0, 0.0, 0.0, 0.0)
+		position[dimension] = 0.0
 
 	var dimension := _element_count * _ELEMENT_SIZE
 	_velocity.resize(dimension)
