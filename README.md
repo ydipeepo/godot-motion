@@ -1,3 +1,11 @@
+<br />
+
+<strong>This repo was no longer maintained. Idk know it still works now or not, but feel free to use it if you need.</strong>
+
+<br />
+
+---
+
 English | [日本語](https://github.com/ydipeepo/godot-motion/blob/main/README_jp.md) | [简体中文](https://github.com/ydipeepo/godot-motion/blob/main/README_zh.md)
 
 <br />
