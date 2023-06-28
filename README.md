@@ -2,6 +2,8 @@
 
 <strong>This repo was no longer maintained. IDK it still works now or not, but feel free to use it if you need.</strong>
 
+<strong>メンテナンスのみ。[Godot 4 版](https://github.com/ydipeepo/godot-motion/tree/main/addons/godot-movado) は動作確認していません。</strong>
+
 <br />
 
 ---
