@@ -22,7 +22,7 @@ English | [日本語](https://github.com/ydipeepo/godot-motion/blob/main/README_
 
 # Godot Motion
 
-Yet another Tween for for Godot 3.
+Yet another Tween for for Godot 3 / 4.
 
 <br />
 
@@ -47,11 +47,11 @@ We are still in the testing phase, so still not distributing at Godot AssetLib.
 #### Checking demos
 
 1. Git clone then open in Godot Engine.
-2. (Select `demo/Demo_*.tscn` as Main Scene then) F5!
+2. (Select `demo/Demo_*.tscn` as Main Scene then) F5! (for Godot 3.*)
 
 #### Add-on installation
 
-1. Git clone then copy `addons/godot-motion` to your project.
+1. Git clone then copy `addons/godot-motion` or `addons/godot-movado` (for Godot 4) to your project.
 2. Activate `Motion` addon.
 3. Code!
 
