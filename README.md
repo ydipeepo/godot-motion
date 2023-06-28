@@ -1,6 +1,6 @@
 <br />
 
-<strong>This repo was no longer maintained. Idk know it still works now or not, but feel free to use it if you need.</strong>
+<strong>This repo was no longer maintained. IDK it still works now or not, but feel free to use it if you need.</strong>
 
 <br />
 
